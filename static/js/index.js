@@ -1,5 +1,5 @@
 //https://www.eclipse.org/paho/clients/js/
-function enviar() {
+function nuevo() {
   console.log("Mensaje enviado");
   texto = document.getElementById('enviarmensaje').value;
   message = new Paho.MQTT.Message(texto);
@@ -8,7 +8,6 @@ function enviar() {
 }
 
 function LED1_On() {
-	//alert("led on");
 	console.log("led on");
  	document.getElementById('estado').innerHTML='Encendido';
 	message = new Paho.MQTT.Message("ON");
@@ -17,7 +16,6 @@ function LED1_On() {
   
 }
 function LED1_Off(){	
-	//alert("led off");
 	console.log("led off");
 	document.getElementById('estado').innerHTML='Apagado';
 	message = new Paho.MQTT.Message("OFF");
