@@ -5,7 +5,7 @@ function enviarmsg() {
   message = new Paho.MQTT.Message(texto);
   message.destinationName = "asilva.fie@unach.edu.ec/test1";
   client.send(message);
-  document.getElementById('enviarmensaje').value=" ";
+  document.getElementById('enviarmensaje').value = '';
 }
 
 function LED1_On() {
