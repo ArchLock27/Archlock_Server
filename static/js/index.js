@@ -1,5 +1,5 @@
 //https://www.eclipse.org/paho/clients/js/
-function nuevo() {
+function enviar() {
   console.log("Mensaje enviado");
   texto = document.getElementById('enviarmensaje').value;
   message = new Paho.MQTT.Message(texto);
