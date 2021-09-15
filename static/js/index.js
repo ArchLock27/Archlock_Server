@@ -1,7 +1,7 @@
 //https://www.eclipse.org/paho/clients/js/
-function nuevo() {
+function enviarmsg() {
   console.log("Mensaje enviado");
-  texto = document.getElementById('enviarmensaje').value;
+  texto = document.getElementById('enviar').value;
   message = new Paho.MQTT.Message(texto);
   message.destinationName = "asilva.fie@unach.edu.ec/test1";
   client.send(message);
