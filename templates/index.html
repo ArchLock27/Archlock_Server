@@ -5,15 +5,22 @@
 <script src="/static/js/index.js"></script>
 <title>EMBEBIDOS</title>
 </head>
-<body>
+<body style="background-image: url('https://wallpaperaccess.com/full/5506731.jpg');">
 
-<h1>Embebidos</h1>
-<img id="imagen" src="/static/images/iot.png" alt="user">
-<h1>Sensor:</h><h id="sensor">--</h1>
-<button id = 'LED1On'type="button" onclick="LED1_On();">
-LED1 ON!</button>
-<button id = 'LED1Off' type="button" onclick="LED1_Off();">
-LED1_OFF!</button>
+<h1 style="text-align: center;"><span style="color: #ffffff;"><strong>Sistemas Embebidos</strong></span></h1>
+<h1 style="text-align: center;"><em><span style="color: #ffffff;"><img src="https://html-online.com/editor/tiny4_9_11/plugins/emoticons/img/smiley-cool.gif" alt="cool" />Andres Silva<img src="https://html-online.com/editor/tiny4_9_11/plugins/emoticons/img/smiley-cool.gif" alt="cool" /></span></em></h1>
+<hr />
+<p><img id="imagen" style="display: block; margin-left: auto; margin-right: auto; width: 652px; height: 310px;" src="https://uvirtual.unach.edu.ec/Content/images/landing/logo_unachenmovimiento.png" alt="user" /></p>
+<hr />
+<p>&nbsp;</p>
+<h1 style="color: white;">Sensor 1: -_-</h1>
+<h1 style="color: white;">Sensor 2: -_-</h1>
+<h1 style="color: white;">Mensaje: <input id="enviarmensaje" name="enviarmensaje" type="text" minlength="1" size="35" /></h1>
+<h1 style="color: white;">Recibido:</h1>
+<h1 style="color: white;">LED: Apagado</h1>
+<p style="text-align: center;"><button id="LED1On" style="background-color: green; color: white; border-radius: 35px; border-color: white; border-width: 3px; font-weight: 600; font-size: 15px; padding: 15px 30px; box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2), 0 6px 20px 0 rgba(0,0,0,0.19); transition-duration: 0.4s;" type="button">LED1 ON!</button> <button id="LED1Off" style="background-color: red; color: white; border-radius: 35px; border-color: white; border-width: 3px; font-weight: 600; font-size: 15px; padding: 15px 30px; box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2), 0 6px 20px 0 rgba(0,0,0,0.19); transition-duration: 0.4s;" type="button">LED1_OFF!</button></p>
+<p style="text-align: center;"><button id = 'nuevo' style="background-color: purple; color: white; border-radius: 35px; border-color: white; border-width: 3px; font-weight: 600; font-size: 15px; padding: 15px 60px; box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2), 0 6px 20px 0 rgba(0,0,0,0.19); transition-duration: 0.4s"
+	type="button" onclick="nuevo();">Enviar Mensaje</button></p>
 
 <script>
 /*
