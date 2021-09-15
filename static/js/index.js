@@ -24,6 +24,10 @@ function LED1_Off(){
  	
 }
 
+function borrar(){
+document.getElementById('enviarmensaje').value=" ";
+}
+
 
 
 
