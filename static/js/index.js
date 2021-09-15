@@ -49,6 +49,7 @@ function LED1_Off(){
     console.log("Usted esta Conectado");
 	
     client.subscribe("asilva.fie@unach.edu.ec/test");
+    client.subscribe("asilva.fie@unach.edu.ec/test");
     message = new Paho.MQTT.Message("Hola desde la Web");
     message.destinationName = "asilva.fie@unach.edu.ec/test1";
     client.send(message);
