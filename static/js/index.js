@@ -5,6 +5,7 @@ function enviarmsg() {
   message = new Paho.MQTT.Message(texto);
   message.destinationName = "asilva.fie@unach.edu.ec/test1";
   client.send(message);
+  document.getElementById('enviarmensaje').value=" ";
 }
 
 function LED1_On() {
@@ -23,22 +24,9 @@ function LED1_Off(){
     	client.send(message);
  	
 }
-
-function borrar(){
-document.getElementById('enviarmensaje').value=" ";
-}
-
-
-
-
-
-
-// Create a client instance
-  //client = new Paho.MQTT.Client("postman.cloudmqtt.com", 14970);
   
   client = new Paho.MQTT.Client("maqiatto.com", 8883, "web_" + parseInt(Math.random() * 100, 10));
 
-  // set callback handlers
   client.onConnectionLost = onConnectionLost;
   client.onMessageArrived = onMessageArrived;
   var options = {
