@@ -1,14 +1,14 @@
 //https://www.eclipse.org/paho/clients/js/
 function enviarmsg() {
   console.log("Mensaje enviado");
-  texto = document.getElementById('enviar').value;
+  var texto = document.getElementById('enviarmensaje').value;
   message = new Paho.MQTT.Message(texto);
   message.destinationName = "asilva.fie@unach.edu.ec/test1";
   client.send(message);
 }
 
 function LED1_On() {
-	console.log("led on");
+	console.log("Led Encendido");
  	document.getElementById('estado').innerHTML='Encendido';
 	message = new Paho.MQTT.Message("ON");
     	message.destinationName = "asilva.fie@unach.edu.ec/test1";
@@ -16,7 +16,7 @@ function LED1_On() {
   
 }
 function LED1_Off(){	
-	console.log("led off");
+	console.log("Led Apagado");
 	document.getElementById('estado').innerHTML='Apagado';
 	message = new Paho.MQTT.Message("OFF");
     	message.destinationName = "asilva.fie@unach.edu.ec/test1";
