@@ -11,7 +11,7 @@ function enviarmsg() {
 function LED1_On() {
 	console.log("Led Encendido");
  	document.getElementById('estado').innerHTML='Encendido';
-	document.getElementById('led').innerHTML='/static/images/On.png';
+	document.getElementById('led').src='/static/images/On.png';
 	
 	message = new Paho.MQTT.Message("ON");
     	message.destinationName = "asilva.fie@unach.edu.ec/test1";
@@ -21,7 +21,7 @@ function LED1_On() {
 function LED1_Off(){	
 	console.log("Led Apagado");
 	document.getElementById('estado').innerHTML='Apagado';
-	document.getElementById('led').innerHTML='/static/images/Off.png';
+	document.getElementById('led').src='/static/images/Off.png';
 	message = new Paho.MQTT.Message("OFF");
     	message.destinationName = "asilva.fie@unach.edu.ec/test1";
     	client.send(message);
