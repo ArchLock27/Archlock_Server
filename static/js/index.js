@@ -71,14 +71,14 @@ function LED1_Off(){
   // called when a message arrives
   function onMessageArrived(message) {
     console.log("onMessageArrived:"+message.payloadString);
-const word = ':';
-const words = message.payloadString.split(':');
-	  
-if(message.payloadString.includes(word)){
-	document.getElementById("sensor1").innerHTML=words[0];
-	document.getElementById("sensor2").innerHTML=words[1];
-	document.getElementById("recibido").innerHTML=words[2];
-}else if (message.payloadString=="ON") {
+  //const word = ':';
+  //const words = message.payloadString.split(':');
+	//if(message.payloadString.includes(word)){
+	//document.getElementById("sensor1").innerHTML=words[0];
+	//document.getElementById("sensor2").innerHTML=words[1];
+	//document.getElementById("recibido").innerHTML=words[2];
+  //} 
+	if (message.payloadString=="ON") {
 	#document.getElementById("sensor1").innerHTML=message.payloadString;
 } else if (message.payloadString=="OFF") {
  	#document.getElementById("sensor1").innerHTML=message.payloadString;
