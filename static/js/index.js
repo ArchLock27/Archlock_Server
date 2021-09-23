@@ -65,13 +65,22 @@ function LED1_Off(){
   // called when a message arrives
   function onMessageArrived(message) {
     console.log("onMessageArrived:"+message.payloadString);
-	  document.getElementById("recibido").innerHTML=message.payloadString;
-if (message.payloadString=="ON") {
-	document.getElementById("sensor1").innerHTML=message.payloadString;
-} else if (message.payloadString=="OFF") {
- 	document.getElementById("sensor1").innerHTML=message.payloadString;
-} else {
-  	document.getElementById("recibido").innerHTML=message.payloadString;
-}
+	  const separador = ':';
+	  mensaje=message.payloadString;
+	  const mensajesep = mensaje.split(':');
+	  if(mensaje.includes(separador)){
+		  document.getElementById("sensor1").innerHTML=mensajesep[0];
+		  document.getElementById("sensor2").innerHTML=mensajesep[1];
+		  document.getElementById("recibido").innerHTML=mensajesep[2];
+	  } else if (message.payloadString=="ON") {
+		  console.log("Encendido");
+		  //document.getElementById("sensor1").innerHTML=message.payloadString;
+	  } else if (message.payloadString=="OFF") {
+		  console.log("Apagado");
+		  //document.getElementById("sensor1").innerHTML=message.payloadString;
+	  } else {
+		  document.getElementById("recibido").innerHTML=message.payloadString;
+
+	  }
 
   }
