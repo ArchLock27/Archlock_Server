@@ -7,7 +7,6 @@ function enviarmsg() {
   client.send(message);
   document.getElementById('enviarmensaje').value = '';
 }
-
 function LED1_On() {
 	console.log("Led Encendido");
  	document.getElementById('estado').innerHTML='Encendido';
@@ -29,7 +28,6 @@ function LED1_Off(){
 }
   
   client = new Paho.MQTT.Client("maqiatto.com", 8883, "web_" + parseInt(Math.random() * 100, 10));
-
   client.onConnectionLost = onConnectionLost;
   client.onMessageArrived = onMessageArrived;
   var options = {
@@ -39,7 +37,6 @@ function LED1_Off(){
     onSuccess:onConnect,
     onFailure:doFail
   }
-
   // connect the client
   client.connect(options);
    
@@ -55,19 +52,16 @@ function LED1_Off(){
     client.send(message);
 	
   }
-
   function doFail(e){
     console.log(e);
 	
   }
-
   // called when the client loses its connection
   function onConnectionLost(responseObject) {
     if (responseObject.errorCode !== 0) {
       console.log("onConnectionLost:"+responseObject.errorMessage);
     }
   }
-
   // called when a message arrives
   function onMessageArrived(message) {
     console.log("onMessageArrived:"+message.payloadString);
@@ -79,4 +73,5 @@ if (message.payloadString=="ON") {
 } else {
   	document.getElementById("recibido").innerHTML=message.payloadString;
 }
-  
+
+  }
