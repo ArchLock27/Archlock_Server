@@ -69,9 +69,9 @@ function LED1_Off(){
 	  mensaje=message.payloadString;
 	  const mensajesep = mensaje.split(':');
 	  if(mensaje.includes(separador)){
-		  document.getElementById("sensor1").innerHTML=mensajesep[0];
-		  document.getElementById("sensor2").innerHTML=mensajesep[1];
-		  document.getElementById("recibido").innerHTML=mensajesep[2];
+		  document.getElementById("sensor1").innerHTML=mensajesep[1];
+		  document.getElementById("sensor2").innerHTML=mensajesep[2];
+		  document.getElementById("recibido").innerHTML=mensajesep[0];
 	  } else if (message.payloadString=="ON") {
 		  console.log("Encendido");
 		  //document.getElementById("sensor1").innerHTML=message.payloadString;
