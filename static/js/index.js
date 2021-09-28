@@ -89,10 +89,12 @@ function SENSOR2_Leer(){
     console.log("onMessageArrived:"+message.payloadString);
 	  const separador = ':';
 	  mensaje=message.payloadString;
-	  const mensajesep = mensaje.split(':');
-	  if(mensaje.includes(separador)){
+	  const mensajesep = mensaje.split(' ');
+	  if(mensaje.includes("S1")){
 		  document.getElementById("sensor1").innerHTML=mensajesep[1];
-		  document.getElementById("sensor2").innerHTML=mensajesep[2];
+	  if(mensaje.includes("S2")){
+		  document.getElementById("sensor2").innerHTML=mensajesep[1];
+		}
 	  }
 
   }
