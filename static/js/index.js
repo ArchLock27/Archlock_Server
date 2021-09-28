@@ -92,9 +92,10 @@ function SENSOR2_Leer(){
 	  const mensajesep = mensaje.split(' ');
 	  if(mensaje.includes('S1')){
 		  document.getElementById("sensor1").innerHTML=mensajesep[1];
+	  }
 	  if(mensaje.includes('S2')){
 		  document.getElementById("sensor2").innerHTML=mensajesep[1];
-		}
+		
 	  }
 
   }
