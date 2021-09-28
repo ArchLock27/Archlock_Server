@@ -87,15 +87,16 @@ function SENSOR2_Leer(){
   // called when a message arrives
   function onMessageArrived(message) {
     console.log("onMessageArrived:"+message.payloadString);
-	  const separador = ':';
+	  const separador1 = 'S1';
+	  const separador2 = 'S2';
 	  mensaje=message.payloadString;
 	  const mensajesep = mensaje.split(' ');
-	  if(mensaje.includes('S1')){
+	  if(mensaje.includes(separador1)){
 		  document.getElementById("sensor1").innerHTML=mensajesep[1];
-	  }
-	  if(mensaje.includes('S2')){
+	  } else if (mensaje.includes(separador2)) {
 		  document.getElementById("sensor2").innerHTML=mensajesep[1];
-		
+	  } else {
+	      console.log("No se esta Leyendo Nada");
 	  }
 
   }
