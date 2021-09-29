@@ -79,9 +79,9 @@ function Leer_sensores(){
 	  mensaje = message.payloadString;
 	  const mensajesep = mensaje.split(':');
 	  if(mensaje.includes(separador)){
-		  document.getElementById("sensor1").innerHTML=mensajesep[1];
-		  document.getElementById("sensor2").innerHTML=mensajesep[2];
-		  document.getElementById("recibido").innerHTML='Estado Led : '+mensajesep[0];
+		  document.getElementById("sensor1").innerHTML='Estado : '+mensajesep[1];
+		  document.getElementById("sensor2").innerHTML='Estado : '+mensajesep[2];
+		  document.getElementById("recibido").innerHTML='Estado Led - '+mensajesep[0];
 		  
 	  } else if (message.payloadString == "ON") {
 		  console.log("Encendido");	  
