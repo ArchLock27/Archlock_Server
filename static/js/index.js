@@ -72,22 +72,24 @@ function Leer_sensores(){
   }
   // called when a message arrives
   function onMessageArrived(message) {
-    console.log("onMessageArrived:"+message.payloadString);
+	  console.log("Mensaje Recibido: "+message.payloadString);
 	  const separador = ':';
-	  mensaje=message.payloadString;
+	  const m1 = 'Led se mantiene Encendido';
+	  const m2 = 'Led se mantiene Apagado';
+	  mensaje = message.payloadString;
 	  const mensajesep = mensaje.split(':');
 	  if(mensaje.includes(separador)){
 		  document.getElementById("sensor1").innerHTML=mensajesep[1];
 		  document.getElementById("sensor2").innerHTML=mensajesep[2];
 		  document.getElementById("recibido").innerHTML=mensajesep[0];
-		 //if (mensajesep[0]=='1'){
-		  //document.getElementById("recibido").innerHTML='Led se mantiene Encendido';
-		  //} else {
-		  //document.getElementById("recibido").innerHTML='Led se mantiene Apagado';  
-		  //}  
-	  } else if (message.payloadString=="ON") {
+		  if (mensajesep[0]=="1"){
+			  document.getElementById("recibido").innerHTML=m1;
+		  } else {
+			  document.getElementById("recibido").innerHTML=m2;  
+		  }  
+	  } else if (message.payloadString == "ON") {
 		  console.log("Encendido");	  
-	  } else if (message.payloadString=="OFF") {
+	  } else if (message.payloadString == "OFF") {
 		  console.log("Apagado");	 
 	  } else {
 		  document.getElementById("recibido").innerHTML=message.payloadString;
