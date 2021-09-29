@@ -26,6 +26,14 @@ function LED1_Off(){
     	client.send(message);
  	
 }
+
+function Leer_sensores(){	
+	console.log("Leyendo Sensores");
+	message = new Paho.MQTT.Message("Leyendo Sensores");
+    	message.destinationName = "asilva.fie@unach.edu.ec/test1";
+    	client.send(message);
+ 	
+}
   
   client = new Paho.MQTT.Client("maqiatto.com", 8883, "web_" + parseInt(Math.random() * 100, 10));
   client.onConnectionLost = onConnectionLost;
@@ -71,16 +79,17 @@ function LED1_Off(){
 	  if(mensaje.includes(separador)){
 		  document.getElementById("sensor1").innerHTML=mensajesep[1];
 		  document.getElementById("sensor2").innerHTML=mensajesep[2];
-		  document.getElementById("recibido").innerHTML=mensajesep[0];
+		  if (mensajesp[0]==1){
+		  document.getElementById("recibido").innerHTML='Led Encendido';
+		  } else {
+		  document.getElementById("recibido").innerHTML='Led Apagado';  
+		  }  
 	  } else if (message.payloadString=="ON") {
-		  console.log("Encendido");
-		  //document.getElementById("sensor1").innerHTML=message.payloadString;
+		  console.log("Encendido");	  
 	  } else if (message.payloadString=="OFF") {
-		  console.log("Apagado");
-		  //document.getElementById("sensor1").innerHTML=message.payloadString;
+		  console.log("Apagado");	 
 	  } else {
 		  document.getElementById("recibido").innerHTML=message.payloadString;
-
 	  }
 
   }
