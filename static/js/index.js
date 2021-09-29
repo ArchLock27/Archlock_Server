@@ -81,12 +81,8 @@ function Leer_sensores(){
 	  if(mensaje.includes(separador)){
 		  document.getElementById("sensor1").innerHTML=mensajesep[1];
 		  document.getElementById("sensor2").innerHTML=mensajesep[2];
-		  document.getElementById("recibido").innerHTML=mensajesep[0];
-		  if (mensajesep[0]=="1"){
-			  document.getElementById("recibido").innerHTML=m1;
-		  } else {
-			  document.getElementById("recibido").innerHTML=m2;  
-		  }  
+		  document.getElementById("recibido").innerHTML='Estado Led : '+mensajesep[0];
+		  
 	  } else if (message.payloadString == "ON") {
 		  console.log("Encendido");	  
 	  } else if (message.payloadString == "OFF") {
