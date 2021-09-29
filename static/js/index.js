@@ -79,10 +79,10 @@ function Leer_sensores(){
 	  if(mensaje.includes(separador)){
 		  document.getElementById("sensor1").innerHTML=mensajesep[1];
 		  document.getElementById("sensor2").innerHTML=mensajesep[2];
-		  if (mensajesp[0]==1){
-		  document.getElementById("recibido").innerHTML='Led Encendido';
+		  if (mensajesep[0]=='1'){
+		  document.getElementById("recibido").innerHTML='Led se mantiene Encendido';
 		  } else {
-		  document.getElementById("recibido").innerHTML='Led Apagado';  
+		  document.getElementById("recibido").innerHTML='Led se mantiene Apagado';  
 		  }  
 	  } else if (message.payloadString=="ON") {
 		  console.log("Encendido");	  
