@@ -70,4 +70,3 @@ const mensajesep = mensaje.split(' ');
 	  }
     document.getElementById("historial").innerHTML=numero[2];
   }
-  
