@@ -1,76 +1,64 @@
 <!DOCTYPE html>
 <html>
 <head>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/paho-mqtt/1.0.1/mqttws31.js" type="text/javascript"></script>
-<script src="/static/js/index.js"></script>
-<title>SISTEMAS EMBEBIDOS</title>
-<meta charset="utf-8">
-<style type="text/css">
-body {
-	background-image: url(../static/images/fondo4.jpg);
-	background-repeat: no-repeat;
-	background-size: 100% 100%;
-	background-attachment:fixed;
-}
-</style>
-<script type="text/javascript">
-function MM_swapImgRestore() { //v3.0
-  var i,x,a=document.MM_sr; for(i=0;a&&i<a.length&&(x=a[i])&&x.oSrc;i++) x.src=x.oSrc;
-}
-function MM_preloadImages() { //v3.0
-  var d=document; if(d.images){ if(!d.MM_p) d.MM_p=new Array();
-    var i,j=d.MM_p.length,a=MM_preloadImages.arguments; for(i=0; i<a.length; i++)
-    if (a[i].indexOf("#")!=0){ d.MM_p[j]=new Image; d.MM_p[j++].src=a[i];}}
-}
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/paho-mqtt/1.0.1/mqttws31.js" type="text/javascript">
+		
+	</script>
 
-function MM_findObj(n, d) { //v4.01
-  var p,i,x;  if(!d) d=document; if((p=n.indexOf("?"))>0&&parent.frames.length) {
-    d=parent.frames[n.substring(p+1)].document; n=n.substring(0,p);}
-  if(!(x=d[n])&&d.all) x=d.all[n]; for (i=0;!x&&i<d.forms.length;i++) x=d.forms[i][n];
-  for(i=0;!x&&d.layers&&i<d.layers.length;i++) x=MM_findObj(n,d.layers[i].document);
-  if(!x && d.getElementById) x=d.getElementById(n); return x;
-}
+	<script src="/static/js/index.js">
+		 
+	</script>
+	<title>EMBEBIDOS</title>
+</head>
+<body>
 
-function MM_swapImage() { //v3.0
-  var i,j=0,x,a=MM_swapImage.arguments; document.MM_sr=new Array; for(i=0;i<(a.length-2);i+=3)
-   if ((x=MM_findObj(a[i]))!=null){document.MM_sr[j++]=x; if(!x.oSrc) x.oSrc=x.src; x.src=a[i+2];}
-}
-</script>
-</head><body onLoad="MM_preloadImages('../static/images/Encender-2.jpg','../static/images/Apagar-2.jpg','../static/images/Send-2.png','../static/images/Start-1.png')">
-<table width="70%" height="150%" border="0" align="center">
-  <tr>
-    <td colspan="5" align="center" valign="middle"><img src="../static/images/encabezado.gif" width="824" height="143"></td>
-  </tr>
-  <tr>
-    <td width="125" height="138" align="right" valign="middle"><span style="color: white; text-align: left;"><img src="../static/images/Fondo.png" alt="led" id="led" width="100" height="100" /></span></td>
-    <td colspan="2"><h1><em><span id="estado" style="color: white; text-align: left; font:'Comic Sans MS', cursive">LED:
-    </span></em></h1>      <a href="#" onMouseOut="MM_swapImgRestore()" onMouseOver="MM_swapImage('LED1On','','../static/images/Encender-2.jpg',1)"></a></td>
-    <td width="225" align="center" valign="middle"><a href="#" onMouseOut="MM_swapImgRestore()" onMouseOver="MM_swapImage('LED1On','','../static/images/Encender-2.jpg',1)"><img src="../static/images/Encender-1.jpg" name="LED1On" width="125" height="75" id="LED1On" onClick="LED1_On()"></a><a href="#" onMouseOut="MM_swapImgRestore()" onMouseOver="MM_swapImage('LED1Off','','../static/images/Apagar-2.jpg',1)"></a></td>
-    <td width="153" align="center" valign="middle"><a href="#" onMouseOut="MM_swapImgRestore()" onMouseOver="MM_swapImage('LED1Off','','../static/images/Apagar-2.jpg',1)"><img src="../static/images/Apagar-1.jpg" name="LED1Off" width="125" height="75" id="LED1Off" onClick="LED1_Off()"></a></td>
-  </tr>
-  <tr>
-    <td height="128" align="right" valign="middle"><h1><img src="../static/images/Sensor.png" width="100" height="100"></h1></td>
-    <td width="199" align="left" valign="middle"><h1><span id="sensor1" style="color: white; font-family: 'Comic Sans MS', cursive">Sensor 1:</span></h1></td>
-    <td width="106" align="right" valign="middle"><img src="../static/images/Sensor.png" width="100" height="100"></td>
-    <td align="left" valign="middle"><h1><span id="sensor2" style="color: white; font-family: 'Comic Sans MS', cursive">Sensor 2:</span></h1></td>
-    <td align="center" valign="middle"><a href="#" onMouseOut="MM_swapImgRestore()" onMouseOver="MM_swapImage('leersensor','','../static/images/Start-1.png',1)"><img src="../static/images/Start-2.png" name="leersensor" width="150" height="70" id="leersensor" onClick="Leer_sensores()"></a><a href="#" onMouseOut="MM_swapImgRestore()" onMouseOver="MM_swapImage('enviar','','../static/images/Send-2.png',1)"></a></td>
-  </tr>
-  <tr>
-    <td height="274" colspan="4"><h1><span style="color: white; font-family:'Comic Sans MS', cursive">Mensaje a Enviar:
-      <input id="enviarmensaje" name="enviarmensaje" type="text" minlength="1" size="75" />
-    </span></h1></td>
-    <td><a href="#" onMouseOut="MM_swapImgRestore()" onMouseOver="MM_swapImage('enviar','','../static/images/Send-2.png',1)"><img src="../static/images/Send-1.png" width="100" height="100" id="enviar" onClick="enviarmsg()"></a></td>
-  </tr>
-  <tr>
-    <td height="149" colspan="5"><h1><span style="color: white; font-family:'Comic Sans MS', cursive;">Último Mensaje Recibido en el Broker:
-      <h id="recibido" style="color: white;"></h>
-    </span></h1></td>
-  </tr>
-</table>
-<h1 style="color: white; text-align: left;">&nbsp;</h1>
-<script>
+	<h1 id='et1'>
+		Embebidos
+	</h1>
+	<img id="imagen" src="https://www.unach.edu.ec/wp-content/uploads/2021/03/logo_unach_2021-02.png" alt="user">
 
-  </script>
+	<h1>    
+		Etiqueta:
+	</h1>
+		
+	<h1 id="t1"> Sensor1:</h><h id="sensor1">
+		--
+	</h1>
+	<h1 id="t2"> Sensor2:</h><h id="sensor2">
+		--
+	</h1>
+	<h1 id="t3"> Historial:</h><h id="historial">
+		--
+	</h1>
+	<h1 >
+		Mayra Leon
+	</h1>
+	
+	<button id = 'LED1On' type="button" onclick="LED1_On();">
+
+		Valor Actual
+	</button>
+
+	<button id = 'LED1_OFF' type="button" onclick="LED1_Off();">
+		Historial
+	</button>
+
+	
+
+	<script>
+	/*
+	function LED1_On() {
+		alert("led on");
+		console.log("led on");
+	  
+	}
+	function LED1_Off(){
+		alert("led off");
+		console.log("led off");
+	}
+	*/
+	</script>
 </body>
 </html>
+
 
